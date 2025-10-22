@@ -19,6 +19,11 @@ body{
   grid-template-columns: 1fr 120px minmax(300px,800px) 1fr;
 }
 
+body.dark{
+  background: #1f1f1f;
+  color: #faf6ed;
+}
+
 .menu{
   grid-column: 3/5;
   margin-top: 2rem;
@@ -34,7 +39,7 @@ body{
 
 .menu li a{
   display: block;
-  padding: 10px;
+  padding: 15px 10px;
   margin-right: 10px;
   color: #222;
   text-decoration: none;
@@ -97,6 +102,10 @@ body{
   grid-column: 2;
 }
 
+.animais-lista li{
+  cursor: pointer;
+}
+
 .animais-lista::-webkit-scrollbar{
   width: 18px;
 }
@@ -109,6 +118,16 @@ body{
 
 .animais-lista::-webkit-scrollbar-track{
   background: #faf6ed;
+}
+
+.animais-lista.dark::-webkit-scrollbar-thumb{
+  background: #fb5;
+  border-left: 4px solid #1f1f1f;
+  border-right: 4px solid #1f1f1f;
+}
+
+.animais-lista.dark::-webkit-scrollbar-track{
+  background: #1f1f1f;
 }
 
 .animais-descricao{
@@ -210,4 +229,25 @@ body{
   .copy{    
     margin-bottom: 0px;
   }
+}
+
+.js .js-tabcontent section{
+  display: none;
+}
+
+.js-tabcontent section.ativo{
+  display: block !important;
+  animation: show .5s forwards;
+}
+
+@keyframes show{
+  from{
+    opacity: 0;
+    transform: translate3d(-30px,0,0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+  
 }
