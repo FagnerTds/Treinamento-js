@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.modal-container{
+  height: 100vh;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container.ativo{
+  display: flex;
+}
+
+.modal{
+  min-width: 300px;
+  background: #fff;
+  padding: 40px;
+  border: solid 10px #fb5;
+  box-shadow: 0 0 0 10px #fff;
+  position: relative;
+}
+
+@keyframes modal{
+  from{
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.ativo .modal{
+  animation: modal .3s forwards;
+}
+
+.fechar{
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 3px #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+  background-color: #e54;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: "IBM Plex Mono", monospace;
+}
+.fechar:hover{
+  scale: 1.1;
+  transition: .15s;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.modal label{
+  font-family: "IBM Plex Mono", monospace;
+  display: block;
+  font-weight: bold;
+  margin: 1rem 0 .5rem 0;
+}
+
+.modal input{
+  width: 100%;
+  padding: 0.7rem .5rem;
+  box-sizing: border-box;
+}
+.modal input:focus{
+  outline: none;
+  border: 2px solid #fb5;
+  background-color: #f5f3ff;
+}
+
+.modal button[type='submit']{
+  display: block;
+  background-color: #e54;
+  border: none;
+  border-radius: 4px;
+  padding: .7rem 2rem;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "IBM Plex Mono", monospace;
+  margin-top: 1rem;
+  box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  font-weight: bold;
+}
+.modal button[type='submit']:hover{
+  scale: 1.05;
+  transition: .15s;
+  box-shadow: 2px 6px 6px 0 rgba(0, 0, 0, 0.3);
+}
