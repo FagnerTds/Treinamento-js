@@ -6,9 +6,7 @@ export default function initFuncionamento() {
 
   const dataAgora = new Date();
   const diaAgora = dataAgora.getDay();
-  const horarioAgora = dataAgora.getHours();
-  console.log(horarioAgora);
-  
+  const horarioAgora = dataAgora.getHours();  
 
   const semanaAberto = diasSemana.indexOf(diaAgora) !== -1;
   const horarioAberto =
